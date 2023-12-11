@@ -18,12 +18,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
+        namespace "com.google.android.apps.flexbox"
         applicationId "com.google.android.apps.flexbox"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion 26
+        targetSdkVersion 34
+        compileSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -40,16 +41,16 @@ android {
 
 dependencies {
     implementation project(":flexbox")
-    implementation "androidx.annotation:annotation:${rootProject.androidxAnnotationVersion}"
-    implementation "androidx.appcompat:appcompat:${rootProject.androidxAppCompatVersion}"
-    implementation "androidx.preference:preference:${rootProject.androidxPreferenceVersion}"
-    implementation "com.google.android.material:material:${rootProject.materialVersion}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "androidx.annotation:annotation:1.7.0"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.preference:preference-ktx:1.2.1"
+    implementation "com.google.android.material:material:1.10.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.0"
 
-    testImplementation "junit:junit:${rootProject.ext.junitVersion}"
+    testImplementation "junit:junit:4.13.2"
 
-    androidTestImplementation "androidx.annotation:annotation:${rootProject.androidxAnnotationVersion}"
-    androidTestImplementation "androidx.test:runner:${rootProject.androidxTestVersion}"
-    androidTestImplementation "androidx.test:rules:${rootProject.androidxTestVersion}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.androidxEspressoVersion}"
+    androidTestImplementation "androidx.annotation:annotation:1.7.0"
+    androidTestImplementation "androidx.test:runner:1.5.2"
+    androidTestImplementation "androidx.test:rules:1.5.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
 }
